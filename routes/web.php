@@ -21,3 +21,7 @@ Route::get("/test", function () {
 Route::get('test/{id}',function($id){
     return view('test.show',['id'=>$id]);
 });
+
+Route::get('test/create',function(){
+    return view('test.create');
+});
