@@ -5,20 +5,21 @@
     <title>Masum Testing | test page</title>
 </head>
 <body>
-    {{-- <p>{{$greetings}}</p>
-    this is test page
-    <br>
-    <a href="/">
-    {{
-        $testUsers[0]['username']
-    }}
-    </a>
-    <a href="/">
-    {{
-        $testUsers[1]['username']
-    }}
-    </a> --}}
+   @if($greetings==='hello')
+   <p>{{$greetings}}</p>
+   @endif
 
-    <h1>this is the page for test id : {{$id}} and name is: {{$name}}</h1>
+   
+   
+    <br>
+   @foreach ($testUsers as $user)
+   <p>{{$user['username']}}</p>
+   <a href="/test/{{$user['id']}}">
+   view Details
+    </a>
+  
+   @endforeach
+
+    
 </body>
 </html>
